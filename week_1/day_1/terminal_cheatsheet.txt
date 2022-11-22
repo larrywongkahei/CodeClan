@@ -1,0 +1,26 @@
+pwd : printing working directorty
+ls : list(-a all -l detail)
+cd : change directory
+.. : move up one directory
+../../.. : move up multiple directories
+rm : remove (-r recursively  -f force)
+mv : move and rename
+git init : to initialize git
+.gitignore : to ignore files
+echo : write something into a certain file without even need to exist
+touch : creat files
+vi : to write and view inside a file
+mkdir : to make directories
+code : to open and code file
+. : means all files
+* : means all keys with same format or name
+cp : copy a file
+cmd + k : clear screen
+history : show history
+
+EVERY time:
+#git init
+#git commit -m""
+#git init branch -M main
+#git remote add origin https://github.com/Maryhei/Day1.git
+#git push -u origin main

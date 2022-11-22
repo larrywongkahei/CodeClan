@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+}
+
+#middle{
+    margin: auto;
+    width: 70%;
+}
+textarea{
+    width: 100%;
+}
+#last{
+    text-align-last: center;
+    color: white;
+}
+body > footer > #last{
+    background-color: dodgerblue;
+}
+header{
+    background-color: dodgerblue;
+    color: white;
+}
