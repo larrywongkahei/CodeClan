@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>{{ title }} - My Todo List</title>
+    </head>
+    <body>
+        <h1>My Todo List!</h1>
+        {% for task in tasks %}
+            <li>
+                {{ task.title }}: <b>{{ task.description }}</b>
+            </li>
+        {%endfor%}
+    </body>
+</html>

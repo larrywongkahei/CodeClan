@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <title>My orders</title>
+    </head>
+    <body>
+        {% for order in orders %}
+            <h1>{{order.book_title}}</h1>
+            <a href="/orders/{{orders.index(order)}}">Open Order</a>
+        {% endfor %}
+    </body>
+</html>

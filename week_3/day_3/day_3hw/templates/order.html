@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>My orders</title>
+    </head>
+    <body>
+        <p>
+            {% for x, y in order.__dict__.items() %}
+            <li>
+                {{ x +":"+ y }}
+            </li>
+            {% endfor %}
+        </p>
+    </body>
+</html>
