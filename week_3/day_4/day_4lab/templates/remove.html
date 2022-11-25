@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content%}
+    <form action="/views/remove" method="post">
+    {% for event in events %}
+        <br>
+        <input type="checkbox" name="{{event.name}}" id="{{event.name}}">
+        <label for="{{event.name}}">{{event.name}}</label>
+    {% endfor %}
+        <br>
+        <button type="submit" for="deleteform">Delete</button>
+        </form>
+{% endblock %}

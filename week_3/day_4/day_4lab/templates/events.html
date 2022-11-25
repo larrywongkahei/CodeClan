@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content%}
+    <a href="/views/add">Add plan</a>
+    {% for index, event in events %}
+        <h2>Event{{index}}</h2>
+        <h3> Event's Name:</h3>
+        <p>{{event.name}}</p>
+        <h3> Date:</h3>
+        <p>{{event.date}}</p>
+        <h3> Number of guests:</h3>
+        <p>{{event.number_guest}}</p>
+        <h3> Location:</h3>
+        <p>{{event.location}}</p>
+        <h3> Event's description:</h3>
+        <p>{{event.description}}</p>
+    {% endfor %}
+{% endblock%}

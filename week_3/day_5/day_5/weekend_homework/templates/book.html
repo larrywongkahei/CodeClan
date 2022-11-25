@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for keys, values in book.__dict__.items() %}
+        <li>
+            <h2>{{keys}}</h2>
+            {% if keys == "check_out" and not values %}
+                In stock!!
+            {% elif keys == "check_out" and values %}
+                Checked out!!
+            {% else %}
+                {{values}}
+            {% endif %}
+        </li>
+    {% endfor %}
+
+{% endblock%}

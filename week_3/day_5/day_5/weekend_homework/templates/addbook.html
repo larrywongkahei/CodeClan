@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="/booklist" method="post">
+        <label for="title">Book title:</label>
+        <input type="text" name="title" id="title">
+        <label for="author">Book author:</label>
+        <input type="text" name="author" id="author">
+        <label for="genre">Book genre:</label>
+        <input type="text" name="genre" id="genre">
+        <input type="submit" value="Add book">
+    </form>
+
+{% endblock%}

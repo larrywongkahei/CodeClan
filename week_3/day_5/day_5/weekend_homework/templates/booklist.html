@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Books List</h1>
+    {% for index, book in books %}
+    <ul>
+        <li>
+            <h2>{{book.title}}</h2>
+            <a href="/booklist/{{index}}">Details</a>
+        </li>
+    </ul>
+    {% endfor %}
+
+{% endblock%}

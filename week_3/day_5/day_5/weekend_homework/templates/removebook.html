@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="/booklist/removebook" method="post">
+        {% for book in books %}
+        <ul>
+            <li>
+                <h2>{{book.title}}</h2>
+                <input type="checkbox" name="{{book.title}}">
+            </li>
+        </ul>
+        {% endfor %}
+        <input type="submit" value="Delete">
+    </form>
+{% endblock%}

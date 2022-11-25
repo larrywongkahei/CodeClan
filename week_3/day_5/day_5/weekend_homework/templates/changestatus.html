@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="/booklist/changestatus" method="post">
+        <h2>In stock:</h2>
+        <hr>
+        {% for book in books %}
+            {% if not book.check_out %}
+            <li>
+                {{book.title}}
+                <input type="checkbox" name="{{book.title}}" id="{{book.title}}">
+            </li>
+            {% endif%}
+            
+        {% endfor %}
+        <hr>
+        <h2>Checked out:</h2>
+        <hr>
+        {% for book in books %}
+            {% if book.check_out %}
+            <li>
+                {{book.title}}
+                <input type="checkbox" name="{{book.title}}" id="{{book.title}}">
+            </li>
+            {% endif%}
+        {% endfor %}
+        <hr>
+        <input type="submit" value="Save changes">
+    </form>
+{% endblock%}

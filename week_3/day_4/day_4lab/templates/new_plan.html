@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="/views" method="post" id="add">
+        <label for="eventname">Event's name</label>
+        <input type="text" name="eventname" id="eventname">
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date" placeholder="dd-mm-yyyy">
+        <label for="number">Number of guest</label>
+        <input type="text" name="number" id="number">
+        <label for="location">Location</label>
+        <input type="type" name="location" id="location">
+        <label for="description">Description</label>
+        <textarea name="description" rows="5" cols="30"></textarea>
+        <button type="submit" for="add">Submit form</button>
+    </form>
+{% endblock %}
