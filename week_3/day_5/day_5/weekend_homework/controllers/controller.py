@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, request
-from models.book_list import books, add_book, removebook
+from models.book_list import books, add_book, removebook, get_checked_books_list, check_in_or_out
 from models.book import Book
 
 @app.route("/")
@@ -40,13 +40,8 @@ def remove_page():
 
 @app.route("/booklist/removebook", methods=["POST"])
 def remove_book():
-    list = []
     delete_data = request.form.keys()
-    for book in books:
-        if book.title in delete_data:
-            list.append(book)
-    for book in list:
-        removebook(book)
+    removebook(books, delete_data)
 
     return render_template("booklist.html")
 
@@ -57,12 +52,7 @@ def change_status():
 @app.route("/booklist/changestatus", methods=["POST"])
 def change():
     data = request.form.keys()
-    for book in books:
-        if book.title in data:
-            if book.check_out:
-                book.check_out = False
-            else:
-                book.check_out = True
+    check_in_or_out(books, data)
     return render_template("booklist.html")
 
 

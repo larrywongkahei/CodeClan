@@ -9,6 +9,7 @@ class Testfunction(unittest.TestCase):
         self.book3 = Book("Killing Floor", "Jack Reacher", "Fictional", False)
         book_list.books = [self.book1, self.book2, self.book3]
         self.book4 = Book("New book", "Larry", "Fictional", True)
+        self.remove_data = {self.book1.title: "sfje"}
 
     def test_add_boook(self):
         expected_outcome = 4
@@ -18,7 +19,7 @@ class Testfunction(unittest.TestCase):
 
     def test_remove_boook(self):
         expected_outcome = 2
-        book_list.removebook(self.book3)
+        book_list.removebook(book_list.books, self.remove_data)
         actual_outcome = len(book_list.books)
         self.assertEqual(expected_outcome, actual_outcome)
 
