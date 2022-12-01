@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="/books" method="post">
+        {% for book in books %}
+        <ul>
+            <li>
+                <label for="{{book.title}}">{{book.title}}</label>
+                <input type="checkbox" id={{book.title}} name="{{book.title}}">
+            </li>
+        </ul>
+        {% endfor %}
+        <input type="submit" value="Delete">
+    </form>
+{% endblock %}

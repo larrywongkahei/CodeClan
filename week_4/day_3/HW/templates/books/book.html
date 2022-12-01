@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <ul>
+        <li>
+            <h2>Title</h2>
+            {{book.title}}
+        </li>
+        <li>
+            <h2>Price</h2>
+            {{book.price}}
+        </li>
+        <li>
+            <h2>Author</h2>
+            {{book.author.name}}
+        </li>
+    </ul>
+{% endblock %}
