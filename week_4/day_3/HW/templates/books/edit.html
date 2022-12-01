@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="/edit/{{book.id}}" method="post">
+    <li>
+    <h2>Title</h2>
+        <label for="title">{{book.title}}</label>
+        <input type="text" id="title" name="title">
+    </li>
+    <li>
+        <h2>Years</h2>
+            <label for="years">{{book.years}}</label>
+            <input type="text" id="years" name="years">
+        </li>
+    <li>
+    <h2>Price</h2>
+        <label for="price">{{book.price}}</label>
+        <input type="text" id="price" name="price">
+    </li>
+    <li>
+    <h2>Author</h2>
+        <label name="author_name">{{book.author.name}}</label>
+    </li>
+    <input type="submit" value="Confirm">
+</form>
+
+{% endblock %}

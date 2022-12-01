@@ -36,3 +36,24 @@ def delete_by_id(id):
     sql = "DELETE FROM books WHERE id = %s"
     VALUES = [id]
     run_sql(sql,VALUES)
+
+def update(title, years, price, author_id, id):
+    sql = "UPDATE books SET (title, years, price, author_id) = (%s, %s, %s, %s) WHERE id = %s RETURNING *"
+    values = [title, years, price, author_id, id]
+    run_sql(sql, values)
+
+def select_by_author_name(author):
+    sql = "SELECT * FROM books WHERE author.name = %s"
+    values = [author]
+    book = run_sql(sql, values)
+    return book
+
+def select_by_name(name):
+    sql = "SELECT * FROM books WHERE name = %s"
+    VALUES = [name]
+    result = run_sql(sql, VALUES)
+    if result:
+        result = result[0]
+        book = Book(result['title'], result['years'], result['price'], result['author'])
+        return book
+    return None

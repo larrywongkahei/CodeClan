@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="/createbook" method="post">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title">
+        <label for="years">Years:</label>
+        <input type="text" id="years" name="years">
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price">
+        <label for="author">Authors:</label>
+        <input type="text" id="author" name="author">
+        <label for="author_age">Authors age:</label>
+        <input type="text" id="author_age" name="author_age">
+        <label for="author_gender">Authors gender:</label>
+        <input type="text" id="author_gender" name="author_gender">
+        <input type="submit" value="Submit">
+    </form>
+
+{% endblock %}
