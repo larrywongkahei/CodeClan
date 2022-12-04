@@ -1,5 +1,6 @@
 class Members:
-    def __init__(self, membership_level, gender, availability, salary, status, id=None):
+    def __init__(self, name, membership_level, gender, availability, salary, status=None, id=None):
+        self.name = name
         self.membership_level = membership_level
         self.gender = gender
         self.availability = availability

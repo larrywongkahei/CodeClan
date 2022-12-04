@@ -1,9 +1,11 @@
+DROP TABLE IF EXISTS class_attend;
 DROP TABLE IF EXISTS classes;
 DROP TABLE IF EXISTS members;
-DROP TABLE IF EXISTS class_attend;
+
 
 CREATE TABLE members (
     id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
     membership_level VARCHAR(255),
     gender VARCHAR(255),
     availability VARCHAR(255),
@@ -13,10 +15,12 @@ CREATE TABLE members (
 
 CREATE TABLE classes (
     id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
     fee INT,
+    gender VARCHAR(255),
     availability VARCHAR(255),
-    duration VARCHAR(255),
-    max_capacity INT,
+    duration INT,
+    max_capacity INT
 );
 
 CREATE TABLE class_attend (
