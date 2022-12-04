@@ -67,6 +67,16 @@ def select_by_id_return_name(id):
     result = result[0]
     return result['name']
 
+# To Delete a class from classes table
+def delete_by_name(class_name):
+    sql = "DELETE FROM classes WHERE name = %s"
+    values = [class_name]
+    run_sql(sql, values)
+
+def update(name, fee, gender, availability, duration, max_capacity, classname):
+    sql = "UPDATE classes SET name = %s, fee = %s, gender = %s, availability = %s, duration = %s, max_capacity = %s WHERE name = %s"
+    values = [name, fee, gender, availability, duration, max_capacity, classname]
+    run_sql(sql, values)
 
 
 

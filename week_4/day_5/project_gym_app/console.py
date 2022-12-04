@@ -22,7 +22,6 @@ classes_repository.save(hiit)
 # Add members to members table
 larry = Members('Larry', 'platinum', 'M', ['mon', 'tue', 'thu'], 1000)
 members_repository.save(larry)
-members_repository.check_in(larry.name)
 
 Tim = Members('Tim', 'bronze', 'M', ['tue', 'thu'], 1300)
 members_repository.save(Tim)
