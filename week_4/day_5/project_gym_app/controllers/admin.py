@@ -1,5 +1,8 @@
 from flask import render_template, Blueprint, request, redirect
+
 from repositries import classes_repository
+from models.classes import Classes
+
 from repositries import members_repository
 from repositries import class_attend_repositry
 from repositries import admin_repository
@@ -38,9 +41,30 @@ def functions(class_name):
 def edit(class_name):
     data = request.form
     days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+    the_class = classes_repository.select_by_name(class_name)
     new_day = []
     for day in days:
         if day in data:
             new_day.append(day)
+    if not new_day:
+        new_day = the_class.availability
+        
     classes_repository.update(data['name'], data['fee'], data['gender'], new_day, data['duration'], data['capacity'], class_name)
     return redirect("/admin/show_classes")
+
+@admin_blueprint.route("/admin/add_class")
+def add_class_page():
+    return render_template("/admin/add_class.html")
+
+@admin_blueprint.route("/admin/add_class", methods=['POST'])
+def add_class():
+    data = request.form
+    days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+    new_day = []
+    for day in days:
+        if day in data:
+            new_day.append(day)
+    new_class = Classes(data['name'], data['fee'], data['gender'], new_day, data['duration'], data['capacity'])
+    classes_repository.save(new_class)
+    return redirect("/admin/show_classes")
+
