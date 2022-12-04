@@ -10,7 +10,7 @@ from repositries import class_attend_repositry
 yoga = Classes('Yoga', 200, 'F', ['mon', 'wed', 'fri', 'sun'], 30, 2)
 classes_repository.save(yoga)
 
-pilates = Classes('Pilates', 200, 'F', ['tue', 'thu', 'sun'], 45, 2)
+pilates = Classes('Pilates', 200, 'F', ['tue', 'thu'], 45, 2)
 classes_repository.save(pilates)
 
 circuit_training = Classes('Circuit Training', 500, 'M', ['tue', 'fri', 'sun'], 20, 5)
@@ -20,7 +20,7 @@ hiit = Classes('HIIT', 600, 'M', ['mon', 'tue', 'thu', 'fri'], 60, 4)
 classes_repository.save(hiit)
 
 # Add members to members table
-larry = Members('Larry', 'platinum', 'M', ['mon', 'tue', 'thu'], 1000)
+larry = Members('Larry', 'platinum', 'M', ['mon', 'tue', 'thu', 'sun'], 1000)
 members_repository.save(larry)
 
 Tim = Members('Tim', 'bronze', 'M', ['tue', 'thu'], 1300)
