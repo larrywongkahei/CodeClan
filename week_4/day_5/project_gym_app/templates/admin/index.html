@@ -20,14 +20,17 @@
     {% endfor %}
     <h2>Member checked-in</h2>
     {% for member in members %}
-    <ul>
-        <li>
-            <h3>Member name:</h3>
-            {{member.name}}
-            <h4>Membership_level</h4>
-            {{member.membership_level}}
-        </li>
-    </ul>
+        {% if member.status %}
+            <ul>
+                <li>
+                    <h3>Member name:</h3>
+                    {{member.name}}
+                    <h4>Membership_level</h4>
+                    {{member.membership_level}}
+                </li>
+            </ul>
+        {% endif %}
+
     {% endfor %}
 
 {% endblock %}

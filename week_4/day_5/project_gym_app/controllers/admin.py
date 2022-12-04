@@ -9,9 +9,9 @@ admin_blueprint = Blueprint("admin", __name__)
 @admin_blueprint.route("/admin")
 def admin_homepage():
     classes = classes_repository.check_class_today()
-    members = members_repository.check_today_member(classes)
+    members = members_repository.select_all()
     members_classes = admin_repository.print_all_class_member_today(classes)
 
 
-    return render_template("admin/index.html", classes=classes, members=members, dict_list =  members_classes)
+    return render_template("admin/index.html", classes=classes, members=members, dict_list=members_classes)
 

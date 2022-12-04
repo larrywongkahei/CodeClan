@@ -10,7 +10,7 @@ CREATE TABLE members (
     gender VARCHAR(255),
     availability VARCHAR(255),
     salary INT,
-    status VARCHAR(255)
+    status BOOLEAN
 );
 
 CREATE TABLE classes (

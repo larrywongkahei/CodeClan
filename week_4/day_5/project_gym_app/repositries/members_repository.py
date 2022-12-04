@@ -68,6 +68,23 @@ def select_by_id_return_name(id):
     result = result[0]
     return result['name']
 
+def select_all():
+    sql = "SELECT * FROM members"
+    values = []
+    result = run_sql(sql, values)
+    members = []
+    for member in result:
+        new_member = Members(member['name'], member['membership_level'], member['gender'], member['availability'], member['salary'], member['status'])
+        members.append(new_member)
+    return members
+
+def check_in(member):
+    sql = "UPDATE members SET status = %s WHERE name = %s"
+    values = [True, member]
+    run_sql(sql, values)
+
+
+
 
 
 
