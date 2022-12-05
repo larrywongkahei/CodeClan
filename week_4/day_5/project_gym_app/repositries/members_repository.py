@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 from models.members import Members
 from datetime import datetime
+import json
 
 
 # To Save a new member to members table
@@ -82,6 +83,47 @@ def check_in(member):
     sql = "UPDATE members SET status = %s WHERE name = %s"
     values = [True, member]
     run_sql(sql, values)
+
+def log_in(name, username, password):
+    with open('data.json', 'r') as f:
+        data = json.load(f)
+        if username in data[name]:
+            if password == data[name][username]:
+                return True
+            else:
+                raise Exception("Wrong Password")
+        else: raise Exception("Wrong username or not exist")
+
+                    
+
+
+def sign_up(name, username, password):
+    try:
+        with open('data.json', "r") as f:
+            data = json.load(f)
+            if username in data:
+                raise Exception("This usename is used")
+            new_data = {name : {username:password}}
+            data.update(new_data)
+            try:
+                with open('data.json', 'w') as f:
+                    json.dump(data, f)
+            except:
+                raise Exception("Sign up failed")
+            else:
+                return True
+    except:
+        raise Exception("Sign up failed")
+
+def select_by_name(name):
+    sql = "SELECT * FROM members WHERE name = %s"
+    values = [name]
+    result = run_sql(sql, values)
+    result = result[0]
+    the_member = Members(result['name'], result['membership_level'], result['gender'], result['availability'], result['salary'])
+    return the_member
+
+
 
 
 

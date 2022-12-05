@@ -19,6 +19,10 @@ app.register_blueprint(admin_blueprint)
 def index():
     return render_template("index.html")
 
+@app.route("/<name>")
+def member(name):
+    return render_template("index.html", member_name=name, login=True)
+
 # To make sure functions only run on main page
 if __name__ == "__main__":
     app.run(debug=True)

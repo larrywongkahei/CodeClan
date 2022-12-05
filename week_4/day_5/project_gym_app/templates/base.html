@@ -11,7 +11,17 @@
         Welcome to Larry's Gym
     </header>
     <a href="/class/show_classes">Show Classes</a>
-    <a href="/login">Login</a>
+    {% if not login %}
+        <a href="/login">Login</a>
+        <a href="/signup">Signup</a>
+    {% else %}
+        <a href="/">Logout</a>
+        {% if not checkin %}
+            <a href="/checkin/{{member_name}}">Checkin</a>
+        {% else %}
+            <a href="/checkout">Checkout</a>
+        {% endif %}
+    {% endif%}
     {% block content %}
 
     {% endblock %}

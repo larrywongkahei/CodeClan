@@ -1,6 +1,20 @@
 {% extends "/admin/base.html" %}
 
 {% block admin %}
-
-
+    {% for member in members %}
+    <ul>
+        <li>
+            <h2>Member's name:</h2>
+            {{member.name}}
+            <h4>Member's membership_level:</h4>
+            {{member.membership_level}}
+            <h4>Member's gender:</h4>
+            {{member.gender}}
+            <h4>Member's availability:</h4>
+            {{member.availability.strip("{}")}}
+            <h4>Member's Salary:</h4>
+            {{member.salary}}
+        </li>
+    </ul>
+    {% endfor %}
 {% endblock %}

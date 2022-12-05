@@ -68,3 +68,7 @@ def add_class():
     classes_repository.save(new_class)
     return redirect("/admin/show_classes")
 
+@admin_blueprint.route("/admin/show_members")
+def show_all_members():
+    members = members_repository.select_all()
+    return render_template("admin/show_members.html", members=members)
