@@ -87,12 +87,16 @@ def check_in(member):
 def log_in(name, username, password):
     with open('data.json', 'r') as f:
         data = json.load(f)
-        if username in data[name]:
-            if password == data[name][username]:
-                return True
-            else:
-                raise Exception("Wrong Password")
-        else: raise Exception("Wrong username or not exist")
+        if name in data:
+            if username in data[name]:
+                if password == data[name][username]:
+                    return True
+                else:
+                    raise Exception("Wrong Password")
+            else: 
+                raise Exception("Wrong username or not exist")
+        else:
+            raise Exception("Name not registered")
 
                     
 

@@ -72,3 +72,8 @@ def add_class():
 def show_all_members():
     members = members_repository.select_all()
     return render_template("admin/show_members.html", members=members)
+
+@admin_blueprint.route("/admin/show_member/<member_name>")
+def show_member(member_name):
+    member = members_repository.select_by_name(member_name)
+    return render_template("admin/show_member.html", member=member)

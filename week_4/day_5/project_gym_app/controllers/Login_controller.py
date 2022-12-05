@@ -21,7 +21,7 @@ def login():
     try:
         members_repository.log_in(name, username, password)
     except:
-        raise Exception("Wrong username or password")
+        raise 
     else:
         return redirect(url_for('member', name=name))
 
