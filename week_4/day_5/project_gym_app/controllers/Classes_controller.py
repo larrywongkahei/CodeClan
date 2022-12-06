@@ -19,14 +19,14 @@ def show_class_detail(class_name):
 def about_us():
     return render_template("classes/about_us.html")
 
-@classes_blueprint.route("/class/timetable")
+@classes_blueprint.route("/class/aboutclasses/timetable")
 def timetable():
     return render_template("/classes/time_table.html")
 
-@classes_blueprint.route("/class/prices")
+@classes_blueprint.route("/class/aboutclasses/prices")
 def prices():
     return render_template("/classes/prices.html")
 
-@classes_blueprint.route("/class/tutor_info")
+@classes_blueprint.route("/class/aboutclasses/tutor_info")
 def tutor_info():
     return render_template("/classes/tutor_info.html")

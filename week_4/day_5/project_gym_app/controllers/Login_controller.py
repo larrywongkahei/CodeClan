@@ -8,7 +8,7 @@ Login_blueprint = Blueprint("Login", __name__)
 
 @Login_blueprint.route("/login")
 def login_page():
-    return render_template("login/login.html")
+    return render_template("login/new_login.html")
 
 @Login_blueprint.route("/login", methods=['POST'])
 def login():
@@ -29,7 +29,7 @@ def login():
 
 @Login_blueprint.route("/signup")
 def signup_page():
-    return render_template("login/signup.html")
+    return render_template("login/new_signup.html")
 
 @Login_blueprint.route("/signup", methods=['POST'])
 def signup():
