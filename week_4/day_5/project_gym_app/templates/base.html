@@ -4,26 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
     <title>Gym</title>
 </head>
 <body>
-    <header>
-        Welcome to Larry's Gym
-    </header>
-    <a href="/class/show_classes">Show Classes</a>
-    {% if not login %}
-        <a href="/login">Login</a>
-        <a href="/signup">Signup</a>
-    {% else %}
-        <a href="/">Logout</a>
-        {% if not checkin %}
-            <a href="/checkin/{{member_name}}">Checkin</a>
-        {% else %}
-            <a href="/checkout">Checkout</a>
-        {% endif %}
-    {% endif%}
-    {% block content %}
+    <nav class="navbar">
+        <div class="logo">
+            Welcome to Larry's Gym
+        </div>
+        <ul class="nav-links">
+            <a href="/class/show_classes">Show Classes</a>
+            <a href="/class/about_us">About us</a>
+            <a href="/login">Check in</a>
+            <a href="/signup">Sign up</a>
+            {% block content %}
 
-    {% endblock %}
+            {% endblock %}
+        </ul>
+    </nav>
 </body>
 </html>

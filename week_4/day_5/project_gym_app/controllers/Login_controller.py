@@ -16,14 +16,16 @@ def login():
     name = data['name']
     username = data['username'].lower()
     password = data['password'].lower()
-    if username == "admin" and password == "admin":
+    if name == "admin" and username == "admin" and password == "admin":
         return redirect("/admin")
     try:
-        members_repository.log_in(name, username, password)
+        members_repository.check_in_login(name, username, password)
     except:
         raise 
     else:
-        return redirect(url_for('member', name=name))
+        members_repository.check_in(name)
+        return render_template("members/checkin.html")
+
 
 @Login_blueprint.route("/signup")
 def signup_page():
@@ -67,8 +69,3 @@ def signup2(name):
     
     return redirect("/")
    
-
-
-@Login_blueprint.route("/logout")
-def logout():
-    return render_template("/", login=False)

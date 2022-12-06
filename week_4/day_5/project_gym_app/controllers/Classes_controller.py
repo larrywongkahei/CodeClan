@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Blueprint
+from flask import Flask, render_template, Blueprint, redirect
 from repositries import classes_repository
 # Set a classes blueprint to make it easier to debug
 classes_blueprint = Blueprint("classes", __name__)
@@ -14,4 +14,8 @@ def show_all_classes():
 def show_class_detail(class_name):
     the_class = classes_repository.select_by_name(class_name)
     return render_template("classes/the_class.html", the_class=the_class)
+
+@classes_blueprint.route("/class/about_us")
+def about_us():
+    return render_template("classes/about_us.html")
 
