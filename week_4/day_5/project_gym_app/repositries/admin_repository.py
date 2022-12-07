@@ -18,4 +18,5 @@ def print_all_class_member_today(class_today):
         dict_list.append(new_dict)
     return dict_list
     
+    
         

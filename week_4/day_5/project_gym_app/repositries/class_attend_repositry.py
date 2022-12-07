@@ -7,4 +7,7 @@ def save(member, classes):
     run_sql(sql, values)
 
         
-
+def delete_all():
+    sql = "DELETE FROM class_attend"
+    values = []
+    run_sql(sql, values)

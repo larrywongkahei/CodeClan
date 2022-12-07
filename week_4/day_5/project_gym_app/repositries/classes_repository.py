@@ -81,5 +81,9 @@ def update(name, fee, gender, availability, duration, max_capacity, classname):
     values = [name, fee, gender, availability, duration, max_capacity, classname]
     run_sql(sql, values)
 
+def delete_all():
+    sql = "DELETE FROM classes"
+    values = []
+    run_sql(sql, values)
 
 

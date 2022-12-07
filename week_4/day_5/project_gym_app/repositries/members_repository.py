@@ -144,6 +144,10 @@ def save_to_session(property_list, value_list):
         session_dict[property] = value
     return session_dict
 
+def delete_all():
+    sql = "DELETE FROM members"
+    values = []
+    run_sql(sql, values)
 
 
 

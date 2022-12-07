@@ -6,6 +6,10 @@ from repositries import members_repository
 
 from repositries import class_attend_repositry
 
+class_attend_repositry.delete_all()
+classes_repository.delete_all()
+members_repository.delete_all()
+
 # Add classes to classes table
 yoga = Classes('Yoga', 200, 'F', ['mon', 'wed', 'fri', 'sun'], 30, 2)
 classes_repository.save(yoga)
