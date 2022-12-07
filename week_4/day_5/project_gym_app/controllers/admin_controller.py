@@ -9,6 +9,7 @@ from repositries import admin_repository
 
 admin_blueprint = Blueprint("admin", __name__)
 
+# To set a admin homepage
 @admin_blueprint.route("/admin")
 def admin_homepage():
     classes = classes_repository.check_class_today()
@@ -18,16 +19,19 @@ def admin_homepage():
 
     return render_template("admin/index.html", classes=classes, members=members, dict_list=members_classes)
 
+# Admin show all classes page
 @admin_blueprint.route("/admin/show_classes")
 def show_all_classes():
     classes = classes_repository.select_all()
     return render_template("admin/show_all_classes.html", classes=classes)
 
+# Admin show class detail page
 @admin_blueprint.route("/admin/show_classes/<class_name>")
 def show_class(class_name):
     the_class = classes_repository.select_by_name(class_name)
     return render_template("admin/show_class_detail.html", classes=the_class)
 
+# Function to have two function within one page*****
 @admin_blueprint.route("/admin/show_classes/<class_name>", methods=['POST'])
 def functions(class_name):
     if request.form['button'] == "Delete":
@@ -37,6 +41,7 @@ def functions(class_name):
         classes = classes_repository.select_by_name(class_name)
         return render_template("admin/edit_class.html", classes=classes)
 
+# Edit class function
 @admin_blueprint.route("/admin/show_classes/edit/<class_name>", methods=['POST'])
 def edit(class_name):
     data = request.form
@@ -52,10 +57,12 @@ def edit(class_name):
     classes_repository.update(data['name'], data['fee'], data['gender'], new_day, data['duration'], data['capacity'], class_name)
     return redirect("/admin/show_classes")
 
+# Add class page
 @admin_blueprint.route("/admin/add_class")
 def add_class_page():
     return render_template("/admin/add_class.html")
 
+# Add class function
 @admin_blueprint.route("/admin/add_class", methods=['POST'])
 def add_class():
     data = request.form
@@ -68,11 +75,13 @@ def add_class():
     classes_repository.save(new_class)
     return redirect("/admin/show_classes")
 
+# Show all members that signed up page
 @admin_blueprint.route("/admin/show_members")
 def show_all_members():
     members = members_repository.select_all()
     return render_template("admin/show_members.html", members=members)
 
+# Show member's detail page
 @admin_blueprint.route("/admin/show_member/<member_name>")
 def show_member(member_name):
     member = members_repository.select_by_name(member_name)

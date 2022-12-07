@@ -38,6 +38,7 @@ def select_by_name(name):
     the_class = Classes(result['name'], result['fee'], result['gender'], result['availability'], result['duration'], result['max_capacity'])
     return the_class
 
+# To return this current weekday
 def return_current_weekday():
     # get today's date to get the current weekday
     todays_date = datetime.now()
@@ -50,7 +51,7 @@ def return_current_weekday():
         new_dict[index] = day
     return new_dict[today_week_day]
 
-
+# To check which classes will be today
 def check_class_today():
     class_today = []
     all_class = select_all()
@@ -60,6 +61,7 @@ def check_class_today():
             class_today.append(item)
     return class_today
 
+# To return the class name with id input
 def select_by_id_return_name(id):
     sql = "SELECT * FROM classes WHERE id = %s"
     values = [id]
@@ -73,6 +75,7 @@ def delete_by_name(class_name):
     values = [class_name]
     run_sql(sql, values)
 
+# To update a class to the db
 def update(name, fee, gender, availability, duration, max_capacity, classname):
     sql = "UPDATE classes SET name = %s, fee = %s, gender = %s, availability = %s, duration = %s, max_capacity = %s WHERE name = %s"
     values = [name, fee, gender, availability, duration, max_capacity, classname]

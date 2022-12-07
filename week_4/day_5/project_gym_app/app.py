@@ -6,7 +6,7 @@ app = Flask(__name__)
 from controllers.Classes_controller import classes_blueprint
 from controllers.Members_controller import members_blueprint
 from controllers.Login_controller import Login_blueprint
-from controllers.admin import admin_blueprint
+from controllers.admin_controller import admin_blueprint
 
 # To register blueprint
 app.register_blueprint(classes_blueprint)

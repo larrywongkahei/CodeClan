@@ -15,18 +15,22 @@ def show_class_detail(class_name):
     the_class = classes_repository.select_by_name(class_name)
     return render_template("classes/the_class.html", the_class=the_class)
 
+# About us page
 @classes_blueprint.route("/class/about_us")
 def about_us():
     return render_template("classes/about_us.html")
 
+# Timetable page
 @classes_blueprint.route("/class/aboutclasses/timetable")
 def timetable():
     return render_template("/classes/time_table.html")
 
+# Prices page
 @classes_blueprint.route("/class/aboutclasses/prices")
 def prices():
     return render_template("/classes/prices.html")
 
+# Tutor_info page
 @classes_blueprint.route("/class/aboutclasses/tutor_info")
 def tutor_info():
     return render_template("/classes/tutor_info.html")

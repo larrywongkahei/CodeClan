@@ -6,10 +6,12 @@ from models.members import Members
 # Set a login blueprint to make it easier to debug.
 Login_blueprint = Blueprint("Login", __name__)
 
+# Check in page (Future login page)
 @Login_blueprint.route("/login")
 def login_page():
     return render_template("login/new_login.html")
 
+# Check in page function 
 @Login_blueprint.route("/login", methods=['POST'])
 def login():
     data = request.form
@@ -27,10 +29,12 @@ def login():
         return render_template("members/checkin.html")
 
 
+# The first signup page
 @Login_blueprint.route("/signup")
 def signup_page():
     return render_template("login/new_signup.html")
 
+# The first signup page function
 @Login_blueprint.route("/signup", methods=['POST'])
 def signup():
     data = request.form
@@ -40,10 +44,12 @@ def signup():
     members_repository.sign_up(name, username, password)
     return redirect(url_for("Login.signup_page2", name=name))
 
+# The second signup page
 @Login_blueprint.route("/signup/<name>")
 def signup_page2(name):
     return render_template("login/signup2.html", name=name)
 
+# The second signup page function
 @Login_blueprint.route("/signup/<name>", methods=['POST'])
 def signup2(name):
     data = request.form

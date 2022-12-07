@@ -34,6 +34,7 @@ def search_by_member(member):
                 class_can_attend.append(item)
     return class_can_attend
 
+# To return today's weekday
 def return_current_weekday():
     # get today's date to get the current weekday
     todays_date = datetime.now()
@@ -62,6 +63,7 @@ def check_today_member(class_today):
         members.append(the_member)
     return members
 
+# Return the name of the member with id input
 def select_by_id_return_name(id):
     sql = "SELECT * FROM members WHERE id = %s"
     values = [id]
@@ -69,6 +71,7 @@ def select_by_id_return_name(id):
     result = result[0]
     return result['name']
 
+# To return all members in a list from the members db
 def select_all():
     sql = "SELECT * FROM members"
     values = []
@@ -79,11 +82,13 @@ def select_all():
         members.append(new_member)
     return members
 
+# To check in (Will show on the admin home page if checked in)
 def check_in(member):
     sql = "UPDATE members SET status = %s WHERE name = %s"
     values = [True, member]
     run_sql(sql, values)
 
+# To check the check in details inserted
 def check_in_login(name, username, password):
     with open('data.json', 'r') as f:
         data = json.load(f)
@@ -100,7 +105,7 @@ def check_in_login(name, username, password):
 
                     
 
-
+# To sign up a account
 def sign_up(name, username, password):
     if not name or not username or not password:
         raise Exception("info can't be None")
@@ -124,6 +129,7 @@ def sign_up(name, username, password):
     else:
         return True
 
+# To return the member with name input
 def select_by_name(name):
     sql = "SELECT * FROM members WHERE name = %s"
     values = [name]

@@ -9,6 +9,7 @@ members_blueprint = Blueprint("members", __name__)
 def show_members_privilege():
     return render_template
 
+# To show check in successfully and redirect page
 @members_blueprint.route("/checkin/<member_name>")
 def checkin(member_name):
     members_repository.check_in(member_name)

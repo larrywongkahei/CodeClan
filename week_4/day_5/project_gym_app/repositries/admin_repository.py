@@ -3,6 +3,7 @@ from repositries import classes_repository
 from repositries import members_repository
 from repositries import class_attend_repositry
 
+# To check all the members who suppose to show up today
 def print_all_class_member_today(class_today):
     classes_id = []
     for classes in class_today:
