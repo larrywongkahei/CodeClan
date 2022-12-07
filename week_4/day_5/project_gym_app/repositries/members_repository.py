@@ -138,6 +138,11 @@ def select_by_name(name):
     the_member = Members(result['name'], result['membership_level'], result['gender'], result['availability'], result['salary'])
     return the_member
 
+def save_to_session(property_list, value_list):
+    session_dict = {}
+    for property, value in zip(property_list, value_list):
+        session_dict[property] = value
+    return session_dict
 
 
 

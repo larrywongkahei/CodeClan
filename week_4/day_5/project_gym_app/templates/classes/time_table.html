@@ -2,8 +2,14 @@
 
 {% block content %}
     <div class="error">
-        <p>OOPS...Looks like you are not &nbsp; <span class="strong"> strong </span> &nbsp; enough to VIEW!</p>
-        <br>
-        <h1 class="signup">signup NOW!!!</h1>
+        {% if not session['Login'] %}
+            <p>OOPS...Looks like you are not &nbsp; <span class="strong"> strong </span> &nbsp; enough to VIEW!</p>
+            <br>
+            <h1 class="signup">signup NOW!!!</h1>
+        {% else %}
+            <p>OOPS...Looks like you are not &nbsp; <span class="strong"> strong </span> &nbsp; enough to VIEW!</p>
+            <br>
+            <h1 class="signup">TRAIN!!!</h1>
+        {% endif %}
     </div>
 {% endblock %}

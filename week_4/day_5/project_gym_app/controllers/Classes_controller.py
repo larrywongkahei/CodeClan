@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Blueprint, redirect
+from flask import Flask, render_template, Blueprint, redirect, session
 from repositries import classes_repository
 # Set a classes blueprint to make it easier to debug
 classes_blueprint = Blueprint("classes", __name__)
