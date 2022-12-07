@@ -1,7 +1,7 @@
 import unittest
 
-from test.classes_test import *
-from test.members_test import *
+from tests.members_test import *
+from tests.classes_test import *
 
 
 if __name__ == "__main__":

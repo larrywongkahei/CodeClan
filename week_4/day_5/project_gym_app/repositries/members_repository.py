@@ -102,22 +102,27 @@ def check_in_login(name, username, password):
 
 
 def sign_up(name, username, password):
+    if not name or not username or not password:
+        raise Exception("info can't be None")
+    
     try:
         with open('data.json', "r") as f:
             data = json.load(f)
-            if username in data:
-                raise Exception("This usename is used")
-            new_data = {name : {username:password}}
-            data.update(new_data)
-            try:
-                with open('data.json', 'w') as f:
-                    json.dump(data, f)
-            except:
-                raise Exception("Sign up failed")
-            else:
-                return True
+            for item, value in data.items():
+                if username in value:
+                    raise
+    except:
+        raise Exception("This username is used")
+
+    new_data = {name : {username:password}}
+    data.update(new_data)
+    try:
+        with open('data.json', 'w') as f:
+            json.dump(data, f)
     except:
         raise Exception("Sign up failed")
+    else:
+        return True
 
 def select_by_name(name):
     sql = "SELECT * FROM members WHERE name = %s"
