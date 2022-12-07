@@ -88,7 +88,7 @@ def check_in(member):
     values = [True, member]
     run_sql(sql, values)
 
-# To check the check in details inserted
+# To check the Log in details inserted
 def check_in_login(name, username, password):
     with open('data.json', 'r') as f:
         data = json.load(f)
