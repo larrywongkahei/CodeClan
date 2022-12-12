@@ -151,8 +151,5 @@ def delete_all():
 
 
 
-
-
-
     
 
