@@ -27,7 +27,7 @@ Decorator.prototype.paint_room = function(room){
         room.painted = true
     }
     for (let i = 0; i < this.stock.length; i++){
-        if (room.area > this.stock[i].litres){
+        if (room.area >= this.stock[i].litres){
             room.area -= this.stock[i].litres;
             this.stock[i].empty();
     } else {
