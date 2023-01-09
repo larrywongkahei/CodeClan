@@ -1,23 +1,29 @@
 {
-  "name": "comments",
+  "name": "react_calculator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/user-event": "^7.2.1",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.3",
+    "@testing-library/user-event": "^12.6.2",
+    "cypress": "^12.3.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll",
-    "test:e2e": "cypress open", 
-    "eject": "react-scripts eject"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "test:e2e": "cypress open"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -32,7 +38,6 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/react": "^12.1.5",
-    "cypress": "^10.11.0"
+    "@testing-library/react": "^12.1.5"
   }
 }

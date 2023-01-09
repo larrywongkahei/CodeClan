@@ -13,9 +13,9 @@ const Counter = () => {
 
   return (
     <>
-      <h1 id="counter">{counter}</h1>
-      <button id="button-up" onClick={incrementCounter}> Up</button>
-      <button id="button-down" onClick={decrementCounter}>Down</button>
+      <h1 data-testid="counter" id='counter'>{counter}</h1>
+      <button id='button-up' data-testid="button-up" onClick={incrementCounter}> Up</button>
+      <button id='button-down' data-testid="button-down" onClick={decrementCounter}>Down</button>
     </>
   )
 }
