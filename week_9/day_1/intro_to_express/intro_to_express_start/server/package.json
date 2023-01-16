@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "expres": "^0.0.5",
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "server:dev": "nodemon server.js"
+  },
+  "name": "server",
+  "description": "Our (Express) server code will go in this folder",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "nodemon": "^2.0.20"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
