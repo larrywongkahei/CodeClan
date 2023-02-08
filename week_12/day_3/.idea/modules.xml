@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/abstract_classes/code/abstract_classes_startpoint/abstract_classes_startpoint.iml" filepath="$PROJECT_DIR$/abstract_classes/code/abstract_classes_startpoint/abstract_classes_startpoint.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/day_3.iml" filepath="$PROJECT_DIR$/.idea/day_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inheritance/inheritance_start_point/inheritance_start_point.iml" filepath="$PROJECT_DIR$/inheritance/inheritance_start_point/inheritance_start_point.iml" />
+    </modules>
+  </component>
+</project>
